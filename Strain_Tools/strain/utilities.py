@@ -100,8 +100,8 @@ def check_coregistered_shapes(strain_values_ds):
     for varname, da in strain_values_ds.data_vars.items():
         nparray = np.array(strain_values_ds[varname])
         arrayshape = np.shape(nparray)
-        assert arrayshape == (len(y), len(x), ValueError(
-            "Error! Not all arrays have the same shape!  Cannot compare."))
+        assert arrayshape == (len(y), len(x)), \
+            "Error! Not all arrays have the same shape!  Cannot compare."
     print("All methods have the same shape.")
     return
 
